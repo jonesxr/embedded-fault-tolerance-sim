@@ -1,0 +1,28 @@
+#include <Arduino.h>
+
+const int LDR1_PIN = 33;
+const int LDR2_PIN = 32;
+const int LDR3_PIN = 35;
+
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+  
+  
+}
+
+void loop() {
+  // adc pinnien luku 
+  int val1 = analogRead(LDR1_PIN);
+  int val2 = analogRead(LDR2_PIN);
+  int val3 = analogRead(LDR3_PIN);
+  
+  // cvs formaatilla serial monitoriin
+  Serial.print(val1);
+  Serial.print(",");
+  Serial.print(val2);
+  Serial.print(",");
+  Serial.println(val3);
+  
+  delay(100); 
+}
