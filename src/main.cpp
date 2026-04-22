@@ -5,7 +5,8 @@
 const int LDR1_PIN = 33;
 const int LDR2_PIN = 32;
 const int LDR3_PIN = 35;
-
+const int REDLED_PIN = 27;
+const int GREENLED_PIN = 26;
 
 // mallin alustus
 Eloquent::ML::Port::OneClassSVM edgeAI;
@@ -24,7 +25,8 @@ int getMedian(int a, int b, int c) {
 
 void setup() {
     Serial.begin(115200);
-
+    pinMode(REDLED_PIN, OUTPUT);
+    pinMode(GREENLED_PIN, OUTPUT);
    
 
     // alkulukemat suodatukseen
@@ -69,12 +71,17 @@ void loop() {
     Serial.print(" mediaani: ");
     Serial.print(mediaani);
     
+    //vika
     if (fault_detected == 1) {
         Serial.println(" sensorissa vika ");
+        digitalWrite(REDLED_PIN, HIGH); 
+        digitalWrite(GREENLED_PIN, LOW);   
      
+    //ok 
     } else {
         Serial.println(" sensorit ok ");
- 
+        digitalWrite(REDLED_PIN, LOW); 
+        digitalWrite(GREENLED_PIN, HIGH); 
     }
     
     // 10hz = 10 per sek
