@@ -14,6 +14,8 @@ Matkan varrella tuli muutama juttu vastaan mitkä piti korjata:
 
 LDR-vastukset olivat halvinta mahdollista mallia suoraan Kiinasta, joten ne olivat aika epätarkkoja. CSV-tiedostosta näkee hyvin, että vaikka valaistus olisi kaikille sama, jokainen antaa ihan eri lukemia. Tämän takia koodin piti osata käsitellä näitä eroja eikä olettaa, että kaikki näyttävät samaa.
 
+![Serial Monitor](serialmonitor.png)
+
 Sensorien lukemat myös hyppivät muutenkin aika paljon, joten koodiin piti lisätä suodatus tasoittamaan tuloksia. Ilman sitä tuli liikaa turhia hälytyksiä.
 
 Koneoppimiskirjasto teki välillä vähän rikkinäistä koodia. Sinne piti tehdä muutama korjaus käsin, että se suostui kääntymään ESP32:lla oikein.
